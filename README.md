@@ -68,9 +68,12 @@ npx hardhat node
 MetaMask.
 
 ```
+MetaMask Cheat Sheet
+
 MetaMask is self-custodial (keeps private keys local) by design.
 
 The Secret Recovery Phrase (SRP) is used to generate public and private key pairs.
+A user might have many key pairs derived from the same recovery phrase.
 
 Under three dots menu:
    Account details
@@ -78,12 +81,16 @@ Under three dots menu:
       View the public key
       Copy the public key
       View the private key if you have the password
+   Settings
+      Network
+        Add a Network
+           For Hardhat, set New RPC URL to: http://localhost:8545 and chain ID to 1337. The currency symbol is ETH.
+      
    Snaps are third-party extensions to MetaMask
 
 Left of three dots menu:
    Shows accounts connected
    These web sites will have access to your public key (only!) of your accounts.
-
 
 Middle drop down arrow
       Select an account
