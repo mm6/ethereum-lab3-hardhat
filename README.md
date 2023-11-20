@@ -39,7 +39,10 @@ npx hardhat init
 ```
 npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```
-5. In the hardhat.config.js file, use the following:
+5. Copy the following to the hardhat.config.js file. Note that we are using
+1337 as the chain ID and http://localhost:8545 as the URL. 
+
+```
 
 require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -55,6 +58,7 @@ module.exports = {
   },
   solidity: "0.5.14",
 };
+```
 
 
 6. Within the directory Lab3_PartA, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at https://127.0.0.1:8545.
