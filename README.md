@@ -85,7 +85,7 @@ Under three dots menu:
       Network
         Add a Network
            For Hardhat, set New RPC URL to: http://localhost:8545 and chain ID to 1337. The currency symbol is ETH.
-      
+
    Snaps are third-party extensions to MetaMask
 
 Left of three dots menu:
@@ -105,6 +105,7 @@ Middle drop down arrow
       Add account or hardware wallet
           Add a new account
           Import an account
+             You will need the account's private key.
           Add Hardware wallet
 
 Top left drop down
