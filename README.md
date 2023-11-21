@@ -173,12 +173,17 @@ on the server's shell to your single, well labeled pdf document.
 
 ## Part B. Deploy an ERC20 token contract and interact with it via MetaMask.
 
-12. Within the directory Lab3_PartA, create a new subdirectory named contracts.
+12. Within the directory Lab3_PartA, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at https://127.0.0.1:8545.
+```
+npx hardhat node
+```
+
+13. Within the directory Lab3_PartA, create a new subdirectory named contracts.
 Within contracts, [create this smart contract named MyAdvancedToken.sol](../../blob/master/Lab3PartB/MyAdvancedToken.sol).
 
-13. This is the same contract that we explored in Lab2.
+14. This is the same contract that we explored in Lab2.
 
-14. Using Node Package Execute (npx), compile the code with the following command. We do
+15. Using Node Package Execute (npx), compile the code with the following command. We do
 this in the directory just above the contracts directory.
 
 Note that this command will download the appropriate compiler.
@@ -188,17 +193,17 @@ npx hardhat compile
 
 ```
 
-15. Run the console.
+16. Run the console.
 
 ```
 npx hardhat console
 ```
-16. Within the console, access the ethers library.
+17. Within the console, access the ethers library.
 
 ```
 const { ethers } = require("hardhat");
 ```
-17. Within the console, deploy the contract to Hardhat.
+18. Within the console, deploy the contract to Hardhat.
 ```
 const Token  = await ethers.getContractFactory("MyAdvancedToken");
 const token = await Token.deploy(1300,"Alice Coin","AC");
@@ -207,28 +212,32 @@ const token = await Token.deploy(1300,"Alice Coin","AC");
 E3. Copy the deployment transaction from the server shell and paste into
 your single, well labeled pdf document.
 
-18. Copy the contract address and paste it into MetaMask as a new token.
+19. Copy the contract address and paste it into MetaMask as a new token.
 
 E4. In two or three lines of text, describe in your own words, how MetaMask was
 able to determine the symbol associated with the contract. Copy your brief
 explanation into your single, well labeled pdf document.
 
-19. Using the console, establish the sell price at 1 eth and the buy price at 2 eth.
+20. Using the console, establish the sell price at 1 eth and the buy price at 2 eth.
 
 E5. Show the console commands that you used to set these prices. Copy
 these commands into your single, well labeled pdf document.
 
-19. Bob would like to purchase 50 ETH worth of Alice Coins from the contract. He needs
-to make this purchase from the console.
+21. Bob would like to purchase 50 ETH worth of Alice Coins from the contract.
+Currently, the contract has no tokens. Show the console commands that can be
+used to give the contract 100 Alice coins.
 
 E6. Copy these commands into your single, well labeled pdf document.
 
-20. Now that Bob has tokens, he would like to view them in MetaMask.
+E7. Bob sends ETH to the contract in exchange for tokens. Copy this transaction
+from the server shell and paste into your single, well labeled pdf document.
+
+22. Now that Bob has tokens, he would like to view them in MetaMask.
 
 E7. Show a screenshot of these tokens in Bob's Metamask wallet. Copy this
 screen shot into your single, well labeled pdf document.
 
-21. Bob uses his MetaMask wallet to transfer 5 tokens to Donna.
+23. Bob uses his MetaMask wallet to transfer 5 tokens to Donna.
 
 E8. Copy the transfer transaction from the server shell and paste it into
 your single, well labeled pdf document.
