@@ -66,7 +66,9 @@ module.exports = {
 npx hardhat node
 ```
 
-7. Leave this server running. Our next activity is to connect to it using MetaMask.
+7. This server will display 20 accounts. These are "Account 0" through "Account 19".
+You should be able to see the public and private keys associated withe each account.
+Leave this server running. Our next activity is to connect to it using MetaMask.
 
 8. Install MetaMask in the Chrome browser and read over the following brief guide to
 MetaMask.
@@ -123,6 +125,8 @@ Top left drop down
              Primary currency
           Advanced
              Clear activity and nonce data from current account and network
+             You may need to clear the nonce if you get a failed transaction. Each
+             time you start the server, it wants the first nonce to be zero.
              Reveal secret recovery phrase (SRP)
              SRP is deterministic and may be used to generate many key pairs (without randomness)
 
@@ -146,6 +150,11 @@ E0. From Alice's account, send 20 ETH to BOB. Copy the transaction details as
 shown on the server's shell to your single, well labeled pdf document.
 
 E1. From Bob's account, send 30 ETH to Carol. Carol's account is the third
+account and we are not importing her private key into MetaMask. We need only
+her public key to perform the transfer. Copy the transaction details as shown
+on the server's shell to your single, well labeled pdf document.
+
+E2. From Alice's account, send 123 ETH to Donna. Donna's account is the fourth
 account and we are not importing her private key into MetaMask. We need only
 her public key to perform the transfer. Copy the transaction details as shown
 on the server's shell to your single, well labeled pdf document.
