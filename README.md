@@ -206,6 +206,9 @@ const { ethers } = require("hardhat");
 18. Within the console, deploy the contract to Hardhat.
 ```
 const Token  = await ethers.getContractFactory("MyAdvancedToken");
+```
+
+```
 const token = await Token.deploy(1300,"Alice Coin","AC");
 ```
 
