@@ -40,7 +40,7 @@ npx hardhat init
 npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```
 5. Copy the following to the hardhat.config.js file. Note that we are using
-1337 as the chain ID and http://localhost:8545 as the URL. 
+1337 as the chain ID and http://localhost:8545 as the URL.
 
 ```
 
@@ -88,23 +88,27 @@ Under three dots menu:
    Settings
       Network
         Add a Network
-           For Hardhat, set New RPC URL to: http://localhost:8545 and chain ID to 1337. The currency symbol is ETH.
+           For Hardhat, set New RPC URL to: http://localhost:8545 and chain
+           ID to 1337. The currency symbol is ETH.
 
    Snaps are third-party extensions to MetaMask
 
-Left of three dots menu:
+Just left of three dots menu:
    Shows accounts connected
    These web sites will have access to your public key (only!) of your accounts.
 
 Middle drop down arrow
       Select an account
           Buy & sell, send, swap, bridge, portfolio
-          The bridge option requires that you have tokens on the source and destination network.
-          To change tokens from one blockchain to another, we need to connect to a bridge service.
+          The bridge option requires that you have tokens on the source and
+          destination network.
+          To change tokens from one blockchain to another, we need to connect
+          to a bridge service.
           MetaMask does not currently work with Bitcoin or non-ethereum blockchains.
           Many Bitcoin wallets exist, e.g. see BitCoinWallet.com.
           The portfolio option allows you to view several accounts at once.
-          Three dot menu to Account Details and change the name on an account or access its public key via copy and paste or a QR code.
+          Three dot menu to Account Details and change the name on an account
+          or access its public key via copy and paste or a QR code.
 
       Add account or hardware wallet
           Add a new account
@@ -126,14 +130,22 @@ Top left drop down
              Turn on when using Hardhat network for testing
 ```
 
-9. Using MetaMask, select the Hardhat Network. You will need to point to the location where you started the server (https://127.0.0.1:8545).
+9. Using MetaMask, select the Hardhat Network. You will need to point to the
+location where you started the server (https://127.0.0.1:8545) and will need
+to set the chain ID to 1337.
 
-10. From the shell where you started the server, copy the private key of the first account to the clipboard and import this key into MetaMask. Name this new account "Alice".
+10. From the shell where you started the server, copy the private key of the
+first account to the clipboard and import this key into MetaMask. Name this new
+account "Alice".
 
-11. From the shell where you started the server, copy the private key of the second account to the clipboard and import this key into MetaMask. Name this new account "Bob".
+11. From the shell where you started the server, copy the private key of the
+second account to the clipboard and import this key into MetaMask. Name this
+new account "Bob".
 
-E0. From Alice's account, send 20 ETH to BOB. Copy the transaction details as shown on the server's shell to your single, well labeled pdf document.
+E0. From Alice's account, send 20 ETH to BOB. Copy the transaction details as
+shown on the server's shell to your single, well labeled pdf document.
 
-E1. From Bob's account, send 30 ETH to Carol. Carol's account is the third account and we are
-not importing her private key into MetaMask. We need only her public key to perform
-the transfer. Copy the transaction details as shown on the server's shell to your single, well labeled pdf document.
+E1. From Bob's account, send 30 ETH to Carol. Carol's account is the third
+account and we are not importing her private key into MetaMask. We need only
+her public key to perform the transfer. Copy the transaction details as shown
+on the server's shell to your single, well labeled pdf document.
