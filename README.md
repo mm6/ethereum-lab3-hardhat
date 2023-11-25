@@ -40,7 +40,7 @@ npx hardhat init
 npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```
 5. Copy the following to the hardhat.config.js file. Note that we are using
-31337 as the chain ID and http://localhost:8545 as the URL. Note too that this
+31337 as the chain ID and http://127.0.0.1:8545 as the URL. Note too that this
 is http and NOT https.
 
 ```
