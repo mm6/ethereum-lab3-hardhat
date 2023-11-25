@@ -6,6 +6,8 @@
 
 **Learning Objectives:**
 
+In this Lab we are working with the MetaMask wallet and Hardhat.
+
 In Part A, we will work **without a smart contract**. We will start the Hardhat
 network in its own shell and interact with the shell via the MetaMask wallet.
 Part A illustrates client server computing and a simple decentralized payment system.
@@ -16,7 +18,7 @@ fallback function that is called from MetaMask..
 
 **Deliverable:**
 
-Please compile your answers to questions EXX through EXX into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
+Please compile your answers to questions E0 through E10 into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
 
 ## Part A. Using MetaMask to interact with a Hardhat network running locally.
 
