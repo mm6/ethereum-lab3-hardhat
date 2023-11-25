@@ -8,6 +8,13 @@
 
 In this Lab we are working with the MetaMask wallet and Hardhat.
 
+A wallet like MetaMask has a limited user interface. If we need
+to generate arbitrary transactions to various smart contracts, we would do
+that using web3 middleware embedded in an application. Transaction creation is done
+using such middleware but MetaMask still has a role to play. It has the keys
+needed for signing and will ask the user for permissions. Here we explore
+some of the features that MetMask provides.
+
 In Part A, we will work **without a smart contract**. We will start the Hardhat
 network in its own shell and interact with the shell via the MetaMask wallet.
 Part A illustrates client server computing and a simple decentralized payment system.
