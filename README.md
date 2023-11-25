@@ -14,7 +14,7 @@ Part A illustrates client server computing and a simple decentralized payment sy
 
 In Part B, we will work with an **ERC20 token contract**. ERC20 tokens are at the heart
 of many Decentralized Finance (DeFi) applications. We will interact with the contract using MetaMask. This ERC20 token contract has been slightly modified from Lab 2. It contains a
-fallback function that is called from MetaMask..
+fallback function that is called from MetaMask.
 
 **Deliverable:**
 
