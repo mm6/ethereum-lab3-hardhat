@@ -11,10 +11,8 @@ network in its own shell and interact with the shell via the MetaMask wallet.
 Part A illustrates client server computing and a simple decentralized payment system.
 
 In Part B, we will work with an **ERC20 token contract**. ERC20 tokens are at the heart
-of many Decentralized Finance (DeFi) applications. We will interact with the contract using MetaMask.
-
-In Part C, we will work with a **Uniswap contract**. Uniswap is an important
-Decentralized Finance (DeFi) application.
+of many Decentralized Finance (DeFi) applications. We will interact with the contract using MetaMask. This ERC20 token contract has been slightly modified from Lab 2. It contains a
+fallback function that is called from MetaMask..
 
 **Deliverable:**
 
@@ -22,7 +20,7 @@ Please compile your answers to questions EXX through EXX into a single PDF file 
 
 ## Part A. Using MetaMask to interact with a Hardhat network running locally.
 
-1. In an empty directory named Lab3_PartA, begin by setting up an npm package. When prompted, hit return and select the defaults.
+1. In an empty directory named Lab3_MetaMask, begin by setting up an npm package. When prompted, hit return and select the defaults.
 ```
 npm init     
 ```
@@ -40,28 +38,30 @@ npx hardhat init
 npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```
 5. Copy the following to the hardhat.config.js file. Note that we are using
-1337 as the chain ID and http://localhost:8545 as the URL.
+31337 as the chain ID and http://localhost:8545 as the URL. Note too that this
+is http and NOT https.
 
 ```
-
 require("@nomicfoundation/hardhat-toolbox");
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   defaultNetwork: "localhost",
   networks: {
     hardhat: {
-      chainId: 1337
+      initialBaseFeePerGas: 0,
+      chainId: 31337
     },
     localhost: {
-      url: "http://localhost:8545"
+      url: "http://127.0.0.1:8545"
     }
   },
   solidity: "0.5.14",
 };
+
 ```
 
 
-6. Within the directory Lab3_PartA, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at https://127.0.0.1:8545.
+6. Within the directory Lab3_MetaMask, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at https://127.0.0.1:8545.
 ```
 npx hardhat node
 ```
@@ -71,7 +71,8 @@ You should be able to see the public and private keys associated withe each acco
 Leave this server running. Our next activity is to connect to it using MetaMask.
 
 8. Install MetaMask in the Chrome browser and read over the following brief guide to
-MetaMask.
+MetaMask. Note that you may need to reset the nonce before retrying after a
+failed transaction.
 
 ```
 MetaMask Cheat Sheet
@@ -91,7 +92,8 @@ Under three dots menu:
       Network
         Add a Network
            For Hardhat, set New RPC URL to: http://localhost:8545 and chain
-           ID to 1337. The currency symbol is ETH.
+           ID to 1337. The chain ID is used to distinguish between chains, is included
+           in signatures, and provides replay protection. The currency symbol is ETH.
 
    Snaps are third-party extensions to MetaMask
 
@@ -105,7 +107,7 @@ Main page
    Balance in ETH
    Under tokens (Notice ETH counts as "Tokens")
       Import Tokens (custom token)
-         Enter contract address
+         Enter contract address (the address of the token)
          Enter token symbol
          Enter token decimal
    Under Activity
@@ -124,8 +126,13 @@ Middle drop down arrow
           Three dot menu to Account Details and change the name on an account
           or access its public key via copy and paste or a QR code.
 
+      Select account, note three dot drop down:
+          Remove account is an option for accounts that were imported with private keys.
+          Remove account is not an option for accounts created by the recovery phrase.
+          Settings/Advanced/Clear Activity Tab data to reset the nonce and failed activities
+
       Add account or hardware wallet
-          Add a new account
+          Add a new account (based on your secret phrase)
           Import an account
              You will need the account's private key.
           Add Hardware wallet
@@ -146,9 +153,9 @@ Top left drop down
              Turn on when using Hardhat network for testing
 ```
 
-9. Using MetaMask, select the Hardhat Network. You will need to point to the
-location where you started the server (https://127.0.0.1:8545) and will need
-to set the chain ID to 1337.
+9. Using MetaMask, add a network manually. We want to select the Hardhat Network.
+You will need to point to the location where you started the server (https://127.0.0.1:8545)
+and will need to set the chain ID to 31337.
 
 10. From the shell where you started the server, copy the private key of the
 first account to the clipboard and import this key into MetaMask. Name this new
@@ -156,34 +163,31 @@ account "Alice".
 
 11. From the shell where you started the server, copy the private key of the
 second account to the clipboard and import this key into MetaMask. Name this
-new account "Bob".
+new account "Bob". Alice and Bob should each show 10,000 ETH. These account
+balances are provided by Hardhat.
 
-E0. From Alice's account, send 20 ETH to BOB. Copy the transaction details as
-shown on the server's shell to your single, well labeled pdf document.
+E0. From Alice's account, send 20 ETH to BOB. You will need Bob's public key.
+Copy the transaction details as shown on the server's shell to your single,
+well labeled pdf document.
 
 E1. From Bob's account, send 30 ETH to Carol. Carol's account is the third
 account and we are not importing her private key into MetaMask. We need only
 her public key to perform the transfer. Copy the transaction details as shown
-on the server's shell to your single, well labeled pdf document.
+on the server's shell to your single, well-labeled pdf document.
 
 E2. From Alice's account, send 123 ETH to Donna. Donna's account is the fourth
 account and we are not importing her private key into MetaMask. We need only
 her public key to perform the transfer. Copy the transaction details as shown
-on the server's shell to your single, well labeled pdf document.
+on the server's shell to your single, well-labeled pdf document.
 
-## Part B. Deploy an ERC20 token contract and interact with it via MetaMask.
+## Part B. Leave the server running and deploy an ERC20 token contract and interact with it via MetaMask.
 
-12. Within the directory Lab3_PartA, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at https://127.0.0.1:8545.
-```
-npx hardhat node
-```
+12. Within the directory Lab3_MetaMask, create a new subdirectory named contracts.
+Within contracts, [create this smart contract named MyAdvancedToken.sol](../../blob/master/Lab3PartB/MyAdvancedToken.sol). This contract has a fallback function to handle ETH being sent by MetaMask.
 
-13. Within the directory Lab3_PartA, create a new subdirectory named contracts.
-Within contracts, [create this smart contract named MyAdvancedToken.sol](../../blob/master/Lab3PartB/MyAdvancedToken.sol).
+13. Aside from the fallback function, this is the same contract that we explored in Lab2.
 
-14. This is the same contract that we explored in Lab2.
-
-15. Using Node Package Execute (npx), compile the code with the following command. We do
+14. Using Node Package Execute (npx), compile the code with the following command. We do
 this in the directory just above the contracts directory.
 
 Note that this command will download the appropriate compiler.
@@ -193,17 +197,17 @@ npx hardhat compile
 
 ```
 
-16. Run the console.
+15. Run the console.
 
 ```
 npx hardhat console
 ```
-17. Within the console, access the ethers library.
+16. Within the console, access the ethers library.
 
 ```
 const { ethers } = require("hardhat");
 ```
-18. Within the console, deploy the contract to Hardhat.
+17. Within the console, deploy the contract to Hardhat.
 ```
 const Token  = await ethers.getContractFactory("MyAdvancedToken");
 ```
@@ -212,40 +216,48 @@ const Token  = await ethers.getContractFactory("MyAdvancedToken");
 const token = await Token.deploy(1300,"Alice Coin","AC");
 ```
 
-E3. Copy the deployment transaction from the server shell and paste into
-your single, well labeled pdf document.
+E3. Copy the deployment transaction from the server shell and paste it into
+your single, well-labeled pdf document. The server shell is where the Ethereum
+test accounts are being displayed.
 
-19. Copy the contract address and paste it into MetaMask as a new token.
+18. Copy the contract address and paste it into MetaMask as a new token for Alice. You can
+revisit Lab 2 to learn how to find the contract's address or you can get it from the
+the Hardhat console where the server is running.
 
 E4. In two or three lines of text, describe in your own words, how MetaMask was
-able to determine the symbol associated with the contract. Copy your brief
-explanation into your single, well labeled pdf document.
+able to determine the symbol (AC) associated with the contract. Copy your brief
+explanation into your single, well-labeled pdf document.
 
-20. Using the console, establish the sell price at 1 eth and the buy price at 2 eth.
+19. Using the console, establish the sell price at 1 eth and the buy price at 2 eth.
+There is an example of such an assignment in the contract itself.
 
 E5. Show the console commands that you used to set these prices. Copy
 these commands into your single, well labeled pdf document.
 
-21. Bob would like to purchase 50 ETH worth of Alice Coins from the contract.
-Currently, the contract has no tokens. Show the console commands that can be
-used to give the contract 100 Alice coins.
+20. Alice wants to sell her coins. Currently, the contract has no
+tokens. Show the console commands that can be used to give the
+contract 50 Alice coins. Alice will need to mint these coins
+and give them to the contract.
 
 E6. Copy these commands into your single, well labeled pdf document.
 
-E7. Bob sends ETH to the contract in exchange for tokens. Copy this transaction
-from the server shell and paste into your single, well labeled pdf document.
+E7. Bob imports the Alice Coin token into his account using MetaMask. He
+then sends 5 ETH to the contract in exchange for tokens. Copy this transaction
+from the server shell and paste into your single, well-labeled pdf document.
 
-22. Now that Bob has tokens, he would like to view them in MetaMask.
+21. Now that Bob has tokens, he would like to view them in MetaMask.
 
-E7. Show a screenshot of these tokens in Bob's Metamask wallet. Copy this
+E7. Show a screenshot of these tokens in Bob's MetaMask wallet. Copy this
 screen shot into your single, well labeled pdf document.
 
-23. Bob uses his MetaMask wallet to transfer 5 tokens to Donna.
+22. Bob uses his MetaMask wallet to transfer 1 Alice Coin token to Donna.
 
 E8. Copy the transfer transaction from the server shell and paste it into
-your single, well labeled pdf document.
+your single, well-labeled pdf document.
 
+E9. Use the console to examine Donna's Alice Coin balance. Show the command
+that you use and take a screen shot showing Donna's balance as returned by
+Hardhat.
 
-const [Alice, Bob, Charlie, Donna] = await ethers.getSigners();
-
-```
+E10. In one very short paragraph, explain why we are not viewing Donna's token
+balance using MetaMask.
