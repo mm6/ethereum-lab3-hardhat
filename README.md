@@ -291,3 +291,15 @@ Hardhat.
 
 E10. In one very short paragraph, explain why we are not viewing Donna's token
 balance using MetaMask.
+
+## Grading rubric for Lab 3
+One pdf file named Lab3.pdf will be submitted on Canvas for grading.
+
++ 3 points for successful completion of Part A
++ 1 point for correct submission and clear labelings of Part A
++ 5 points for successful completion of Part B
++ 1 point for correct submission and clear labelings of Part B
+
+Penalty for any late  work
+==========================
++ -1 point per day late
