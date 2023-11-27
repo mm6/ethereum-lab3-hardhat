@@ -178,7 +178,7 @@ we get some exposure to using MetaMask for sending ETH from one account (we are 
 possession of the sender's private key for signing) to another account (with the address of the receiver).
 
 10. Using MetaMask, add a network manually. We want to select the Hardhat Network.
-You will need to point to the location where you started the server (https://127.0.0.1:8545)
+You will need to point to the location where you started the server (http://127.0.0.1:8545)
 and will need to set the chain ID to 31337.
 
 11. From the shell where you started the server, copy the private key of the
