@@ -262,14 +262,14 @@ There is an example of such an assignment in the contract itself. This is not a 
 that we can do through MetaMask.
 
 E5. Show the console commands that you used to set these prices. Copy
-these commands into your single, well labeled pdf document.
+these commands into your single, well-labeled pdf document.
 
 21. Alice wants to sell her coins. Currently, the contract has no
 tokens. Show the console commands that can be used to give the
 contract 50 Alice coins. Alice will need to mint these coins
 and give them to the contract.
 
-E6. Copy these commands into your single, well labeled pdf document.
+E6. Copy these commands into your single, well-labeled pdf document.
 
 E7. Bob imports the Alice Coin token into his account using MetaMask. He
 then sends 5 ETH to the contract in exchange for tokens. Copy this transaction
@@ -278,7 +278,7 @@ from the server shell and paste into your single, well-labeled pdf document.
 22. Now that Bob has tokens, he would like to view them in MetaMask.
 
 E7. Show a screenshot of these tokens in Bob's MetaMask wallet. Copy this
-screen shot into your single, well labeled pdf document.
+screen shot into your single, well-labeled pdf document.
 
 23. Bob uses his MetaMask wallet to transfer 1 Alice Coin token to Donna.
 
