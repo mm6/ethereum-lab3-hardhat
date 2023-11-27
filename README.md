@@ -71,7 +71,7 @@ module.exports = {
 ```
 
 
-6. Within the directory Lab3_MetaMask, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at https://127.0.0.1:8545.
+6. Within the directory Lab3_MetaMask, start a JSON-RPC server that will run on top of the Hardhat Ethereum Virtual Machine. After startup, this server will become available at http://127.0.0.1:8545.
 ```
 npx hardhat node
 ```
