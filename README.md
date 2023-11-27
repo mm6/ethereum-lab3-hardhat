@@ -1,6 +1,6 @@
 ##  Fall 2023 Blockchain and SQL Fundamentals    Lab 3
 ### Carnegie Mellon University MSCF
-### Due: Wednesday, December 6, 2023 11:59 PM
+### Due: Friday, December 8, 2023 11:59 PM
 ### 10 Points
 ### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
 
@@ -48,7 +48,8 @@ npm install --save-dev @nomicfoundation/hardhat-toolbox
 ```
 5. Copy the following to the hardhat.config.js file. Note that we are using
 31337 as the chain ID and http://127.0.0.1:8545 as the URL. Note too that this
-is http and NOT https.
+is http and NOT https. The initialBaseFeePerGas is set to 0 for testing with
+MetaMask and Hardhat.
 
 ```
 require("@nomicfoundation/hardhat-toolbox");
@@ -83,6 +84,8 @@ Leave this server running. Our next activity is to connect to it using MetaMask.
 MetaMask. Note that you may need to reset the nonce before retrying after a
 failed transaction.
 
+9. Browse around MetaMask to get used to the interface. Below is a sketch of its interface.
+
 ```
 MetaMask Cheat Sheet
 
@@ -101,7 +104,7 @@ Under three dots menu:
       Network
         Add a Network
            For Hardhat, set New RPC URL to: http://localhost:8545 and chain
-           ID to 1337. The chain ID is used to distinguish between chains, is included
+           ID to 31337. The chain ID is used to distinguish between chains, is included
            in signatures, and provides replay protection. The currency symbol is ETH.
 
    Snaps are third-party extensions to MetaMask
@@ -109,13 +112,16 @@ Under three dots menu:
 Just left of three dots menu:
    Shows accounts connected
    These web sites will have access to your public key (only!) of your accounts.
+   We are not connecting our account in this lab.
 
 Main page
    Account name
-   Public key
+   Public key (with a copy icon)
    Balance in ETH
+   Balance in USD
    Under tokens (Notice ETH counts as "Tokens")
       Import Tokens (custom token)
+         Alice Coin deployed to Hardhat counts as a "custom token".
          Enter contract address (the address of the token)
          Enter token symbol
          Enter token decimal
@@ -132,13 +138,18 @@ Middle drop down arrow
           MetaMask does not currently work with Bitcoin or non-ethereum blockchains.
           Many Bitcoin wallets exist, e.g. see BitCoinWallet.com.
           The portfolio option allows you to view several accounts at once.
-          Three dot menu to Account Details and change the name on an account
-          or access its public key via copy and paste or a QR code.
+          Settings/Advanced/Clear Activity Tab data to reset the nonce and failed activities.
+          Settings/Advanced/Clear Activity Tab is useful when debugging. You may need to clear
+          the nonce if you get a failed transaction. Each time you start the server, it wants
+          the first nonce to be zero.
+
 
       Select account, note three dot drop down:
+          The "Select an Account" page has a three dot menu next to each account.
+          Select Account Details and change the name on an account or access its public key
+          via copy and paste or a QR code.
           Remove account is an option for accounts that were imported with private keys.
           Remove account is not an option for accounts created by the recovery phrase.
-          Settings/Advanced/Clear Activity Tab data to reset the nonce and failed activities
 
       Add account or hardware wallet
           Add a new account (based on your secret phrase)
@@ -151,33 +162,37 @@ Top left drop down
           General
              Currency conversion
              Primary currency
-          Advanced
-             Clear activity and nonce data from current account and network
-             You may need to clear the nonce if you get a failed transaction. Each
-             time you start the server, it wants the first nonce to be zero.
+          Select a Network
+             In order to add Harhat:
+             Add a Network/Add a network manually  
+
+          Security and Privacy
              Reveal secret recovery phrase (SRP)
-             SRP is deterministic and may be used to generate many key pairs (without randomness)
+             SRP is deterministic and may be used to generate many key pairs (without randomness).
 
           Show test networks
              Turn on when using Hardhat network for testing
 ```
+Like Bitcoin, Ethereum can be used as a simple payment network. In this part of the lab,
+we get some exposure to using MetaMask for sending ETH from one account (we are in
+possession of the sender's private key for signing) to another account (with the address of the receiver).
 
-9. Using MetaMask, add a network manually. We want to select the Hardhat Network.
+10. Using MetaMask, add a network manually. We want to select the Hardhat Network.
 You will need to point to the location where you started the server (https://127.0.0.1:8545)
 and will need to set the chain ID to 31337.
 
-10. From the shell where you started the server, copy the private key of the
+11. From the shell where you started the server, copy the private key of the
 first account to the clipboard and import this key into MetaMask. Name this new
 account "Alice".
 
-11. From the shell where you started the server, copy the private key of the
+12. From the shell where you started the server, copy the private key of the
 second account to the clipboard and import this key into MetaMask. Name this
 new account "Bob". Alice and Bob should each show 10,000 ETH. These account
 balances are provided by Hardhat.
 
 E0. From Alice's account, send 20 ETH to BOB. You will need Bob's public key.
 Copy the transaction details as shown on the server's shell to your single,
-well labeled pdf document.
+well-labeled pdf document.
 
 E1. From Bob's account, send 30 ETH to Carol. Carol's account is the third
 account and we are not importing her private key into MetaMask. We need only
@@ -191,12 +206,17 @@ on the server's shell to your single, well-labeled pdf document.
 
 ## Part B. Leave the server running and deploy an ERC20 token contract and interact with it via MetaMask.
 
-12. Within the directory Lab3_MetaMask, create a new subdirectory named contracts.
+Ethereum goes beyond a simple payment network and provides smart contracts. Smart contracts
+are Turing complete and so we must pay for any gas that is used.
+
+MetaMask allows us to interact (in a limited way) with an ERC-20 token service.
+
+13. Within the directory Lab3_MetaMask, create a new subdirectory named contracts.
 Within contracts, [create this smart contract named MyAdvancedToken.sol](../../blob/master/Lab3PartB/MyAdvancedToken.sol). This contract has a fallback function to handle ETH being sent by MetaMask.
 
-13. Aside from the fallback function, this is the same contract that we explored in Lab2.
+14. Aside from the fallback function, this is the same contract that we explored in Lab2.
 
-14. Using Node Package Execute (npx), compile the code with the following command. We do
+15. Using Node Package Execute (npx), compile the code with the following command. We do
 this in the directory just above the contracts directory.
 
 Note that this command will download the appropriate compiler.
@@ -206,17 +226,17 @@ npx hardhat compile
 
 ```
 
-15. Run the console.
+16. Run the console.
 
 ```
 npx hardhat console
 ```
-16. Within the console, access the ethers library.
+17. Within the console, access the ethers library.
 
 ```
 const { ethers } = require("hardhat");
 ```
-17. Within the console, deploy the contract to Hardhat.
+18. Within the console, deploy the contract to Hardhat.
 ```
 const Token  = await ethers.getContractFactory("MyAdvancedToken");
 ```
@@ -229,7 +249,7 @@ E3. Copy the deployment transaction from the server shell and paste it into
 your single, well-labeled pdf document. The server shell is where the Ethereum
 test accounts are being displayed.
 
-18. Copy the contract address and paste it into MetaMask as a new token for Alice. You can
+19. Copy the contract address and paste it into MetaMask as a new token for Alice. You can
 revisit Lab 2 to learn how to find the contract's address or you can get it from the
 the Hardhat console where the server is running.
 
@@ -237,13 +257,14 @@ E4. In two or three lines of text, describe in your own words, how MetaMask was
 able to determine the symbol (AC) associated with the contract. Copy your brief
 explanation into your single, well-labeled pdf document.
 
-19. Using the console, establish the sell price at 1 eth and the buy price at 2 eth.
-There is an example of such an assignment in the contract itself.
+20. Using the console, establish the sell price at 1 eth and the buy price at 2 eth.
+There is an example of such an assignment in the contract itself. This is not a transaction
+that we can do through MetaMask.
 
 E5. Show the console commands that you used to set these prices. Copy
 these commands into your single, well labeled pdf document.
 
-20. Alice wants to sell her coins. Currently, the contract has no
+21. Alice wants to sell her coins. Currently, the contract has no
 tokens. Show the console commands that can be used to give the
 contract 50 Alice coins. Alice will need to mint these coins
 and give them to the contract.
@@ -254,12 +275,12 @@ E7. Bob imports the Alice Coin token into his account using MetaMask. He
 then sends 5 ETH to the contract in exchange for tokens. Copy this transaction
 from the server shell and paste into your single, well-labeled pdf document.
 
-21. Now that Bob has tokens, he would like to view them in MetaMask.
+22. Now that Bob has tokens, he would like to view them in MetaMask.
 
 E7. Show a screenshot of these tokens in Bob's MetaMask wallet. Copy this
 screen shot into your single, well labeled pdf document.
 
-22. Bob uses his MetaMask wallet to transfer 1 Alice Coin token to Donna.
+23. Bob uses his MetaMask wallet to transfer 1 Alice Coin token to Donna.
 
 E8. Copy the transfer transaction from the server shell and paste it into
 your single, well-labeled pdf document.
