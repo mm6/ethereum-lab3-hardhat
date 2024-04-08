@@ -1,6 +1,7 @@
-##  Fall 2023 Blockchain and SQL Fundamentals    Lab 3
-### Carnegie Mellon University MSCF
-### Due: Friday, December 8, 2023 11:59 PM
+##  Spring 2024 Developing Blockchain Use Cases    Lab 3
+### Carnegie Mellon University
+### Assigned: Monday, April 8, 2024 11:59 PM
+### Due: Monday, April 22, 2024 11:59 PM
 ### 10 Points
 ### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
 
