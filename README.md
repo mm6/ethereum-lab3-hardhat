@@ -1,7 +1,7 @@
-##  Spring 2024 Developing Blockchain Use Cases    Lab 3
+##  Fall 2024 Blockchain and SQL Fundamentals    Lab 3
 ### Carnegie Mellon University
-### Assigned: Monday, April 8, 2024 11:59 PM
-### Due: Monday, April 22, 2024 11:59 PM
+### Assigned: Thursday, November 21, 2024 5:00 PM
+### Due: Friday, December 13, 2024 11:59 PM
 ### 10 Points
 ### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
 
@@ -85,7 +85,7 @@ Leave this server running. Our next activity is to connect to it using MetaMask.
 MetaMask. Note that you may need to reset the nonce before retrying after a
 failed transaction.
 
-9. Browse around MetaMask to get used to the interface. Below is a sketch of its interface.
+9. Browse around MetaMask to get used to the interface. It can be a bit confusing. Below is a description of its interface.
 
 ```
 MetaMask Cheat Sheet
