@@ -102,12 +102,15 @@ Under three dots menu:
       Copy the public key
       View the private key if you have the password
    Settings
-      Network
-        Add a Network
-           For Hardhat, set New RPC URL to: http://localhost:8545 and chain
-           ID to 31337. The chain ID is used to distinguish between chains, is included
-           in signatures, and provides replay protection. The currency symbol is ETH.
-
+      General
+      Advanced
+         Clear Activity Tab is useful when debugging. You may need to clear
+         the nonce if you get a failed transaction. Each time you start the server, it wants
+         the first nonce to be zero.
+      Contacts
+      Security and Privacy
+      Experimental
+      About
    Snaps are third-party extensions to MetaMask
 
 Just left of three dots menu:
@@ -131,19 +134,14 @@ Main page
 
 Middle drop down arrow
       Select an account
-          Buy & sell, send, swap, bridge, portfolio
+          Buy & sell, swap, bridge, send, receive
           The bridge option requires that you have tokens on the source and
           destination network.
           To change tokens from one blockchain to another, we need to connect
           to a bridge service.
-          MetaMask does not currently work with Bitcoin or non-ethereum blockchains.
+          MetaMask does not currently work with Bitcoin or non-ethereum blockchains. You could buy ERC-20 WBTC (wrapped bitcoin) with bitcoin and use WBTC on the wallet.
           Many Bitcoin wallets exist, e.g. see BitCoinWallet.com.
           The portfolio option allows you to view several accounts at once.
-          Settings/Advanced/Clear Activity Tab data to reset the nonce and failed activities.
-          Settings/Advanced/Clear Activity Tab is useful when debugging. You may need to clear
-          the nonce if you get a failed transaction. Each time you start the server, it wants
-          the first nonce to be zero.
-
 
       Select account, note three dot drop down:
           The "Select an Account" page has a three dot menu next to each account.
@@ -159,7 +157,12 @@ Middle drop down arrow
           Add Hardware wallet
 
 Top left drop down
-      Add a network
+      Add a custom network
+      Network name is Hardhat
+      For Hardhat, set Default RPC URL to: http://127.0.0.1:8545 and chain
+      ID to 31337. The chain ID is used to distinguish between chains, is included
+      in signatures, and provides replay protection. The currency symbol is ETH.
+      If MetaMask complains about the network name or the chain ID or the currency symbol, just ignore it.
           General
              Currency conversion
              Primary currency
@@ -173,6 +176,10 @@ Top left drop down
 
           Show test networks
              Turn on when using Hardhat network for testing
+
+
+
+
 ```
 Like Bitcoin, Ethereum can be used as a simple payment network. In this part of the lab,
 we get some exposure to using MetaMask for sending ETH from one account (we are in
