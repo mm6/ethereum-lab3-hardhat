@@ -7,7 +7,9 @@
 
 **Learning Objectives:**
 
-In this Lab we are working with the MetaMask wallet, smart contracts, Hardhat, and Defi Llama..
+In this Lab we are working with the MetaMask wallet, smart contracts, Hardhat, and Defi Llama.
+
+This lab has 15 small exercises.
 
 A wallet like MetaMask has a limited user interface. If we need
 to generate arbitrary transactions to various smart contracts, we would do
@@ -287,30 +289,30 @@ from the server shell and paste into your single, well-labeled pdf document.
 
 22. Now that Bob has tokens, he would like to view them in MetaMask.
 
-E7. Show a screenshot of these tokens in Bob's MetaMask wallet. Copy this
+E8. Show a screenshot of these tokens in Bob's MetaMask wallet. Copy this
 screen shot into your single, well-labeled pdf document.
 
 23. Bob uses his MetaMask wallet to transfer 1 Alice Coin token to Donna.
 
-E8. Copy the transfer transaction from the server shell and paste it into
+E9. Copy the transfer transaction from the server shell and paste it into
 your single, well-labeled pdf document.
 
-E9. Use the console to examine Donna's Alice Coin balance. Show the command
+E10. Use the console to examine Donna's Alice Coin balance. Show the command
 that you use and take a screen shot showing Donna's balance as returned by
 Hardhat.
 
-E10. In one very short paragraph, explain why we are not viewing Donna's token
+E11. In one very short paragraph, explain why we are not viewing Donna's token
 balance using MetaMask.
 
 ## Part C. 2 Points. DeFiLlama.com is like a Bloomberg or Yahoo Finance for the decentralized finance (DeFi) world. It provides comprehensive data and analytics on various DeFi protocols across multiple blockchains, similar to how traditional financial websites offer insights into stocks, bonds, and other financial instruments. It categorizes protocols into different types, such as decentralized exchanges (DEXs), lending platforms, and yield aggregators, akin to how traditional sites categorize financial instruments into sectors or asset classes.
 
 24. Visit the [DefLlama API](https://defillama.com/docs/api. Using [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) and guided by your own interest in finance, develop a program (in JavaScript or Python) that uses the API to answer some interesting question. In your well labelled PDF, include the following three parts:
 
-E11. Provide the question that your program finds the answer to. Feel free to consult with Copilot when developing the question. It must be a question that can be answered by using the DeFiLlama API.
+E12. Provide the question that your program finds the answer to. Feel free to consult with Copilot when developing the question. It must be a question that can be answered by using the DeFiLlama API.
 
-E12. The program (in JavaScript or Python) that answers the question by making call(s) on the Defi Llama API. Feel free to use [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) to help create the code.
+E13. The program (in JavaScript or Python) that answers the question by making call(s) on the Defi Llama API. Feel free to use [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) to help create the code.
 
-E13. The output of the program when it executes. This program may or may not be interactive.
+E14. The output of the program when it executes. This program may or may not be interactive.
 
 ## Grading rubric for Lab 3
 
