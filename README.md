@@ -310,9 +310,9 @@ balance using MetaMask.
 
 E12. Provide the question that your program finds the answer to. Feel free to consult with Copilot when developing the question. It must be a question that can be answered by using the DeFiLlama API.
 
-E13. The program (in JavaScript or Python) that answers the question by making call(s) on the Defi Llama API. Feel free to use [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) to help create the code.
+E13. Show the program (in JavaScript or Python) that answers the question by making call(s) on the Defi Llama API. Feel free to use Copilot to help create the code.
 
-E14. The output of the program when it executes. This program may or may not be interactive.
+E14. Show the output of the program when it executes. This program may or may not be interactive.
 
 ## Grading rubric for Lab 3
 
