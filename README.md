@@ -7,7 +7,7 @@
 
 **Learning Objectives:**
 
-In this Lab we are working with the MetaMask wallet and Hardhat.
+In this Lab we are working with the MetaMask wallet, smart contracts, Hardhat, and Defi Llama..
 
 A wallet like MetaMask has a limited user interface. If we need
 to generate arbitrary transactions to various smart contracts, we would do
@@ -26,9 +26,9 @@ fallback function that is called from MetaMask.
 
 **Deliverable:**
 
-Please compile your answers to questions E0 through E10 into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
+Please compile your answers to questions E0 through E13 into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
 
-## Part A. Using MetaMask to interact with a Hardhat network running locally.
+## Part A. 3 Points. Using MetaMask to interact with a Hardhat network running locally.
 
 1. In an empty directory named Lab3_MetaMask, begin by setting up an npm package. When prompted, hit return and select the defaults.
 ```
@@ -162,7 +162,7 @@ Top left drop down
       For Hardhat, set Default RPC URL to: http://127.0.0.1:8545 and chain
       ID to 31337. The chain ID is used to distinguish between chains, is included
       in signatures, and provides replay protection. The currency symbol is ETH.
-      If MetaMask complains about the network name or the chain ID or the currency symbol, just ignore it.
+      If MetaMask complains about the network name or the chain ID or the currency symbol, just ignore the complaints and try to establish a network connection to Hardhat.
           General
              Currency conversion
              Primary currency
@@ -176,9 +176,6 @@ Top left drop down
 
           Show test networks
              Turn on when using Hardhat network for testing
-
-
-
 
 ```
 Like Bitcoin, Ethereum can be used as a simple payment network. In this part of the lab,
@@ -212,14 +209,17 @@ account and we are not importing her private key into MetaMask. We need only
 her public key to perform the transfer. Copy the transaction details as shown
 on the server's shell to your single, well-labeled pdf document.
 
-## Part B. Leave the server running and deploy an ERC20 token contract and interact with it via MetaMask.
+## Part B. 5 Points. Leave the server running and deploy an ERC20 token contract and interact with it via MetaMask.
+
+Note: In this part, we are leaving the server from Part A. running.
 
 Ethereum goes beyond a simple payment network and provides smart contracts. Smart contracts
 are Turing complete and so we must pay for any gas that is used.
 
 MetaMask allows us to interact (in a limited way) with an ERC-20 token service.
 
-13. Within the directory Lab3_MetaMask, create a new subdirectory named contracts.
+13. Within the directory Lab3_MetaMask, create a new subdirectory named contracts. You will need to open a new shell.
+
 Within contracts, [create this smart contract named MyAdvancedToken.sol](../../blob/master/Lab3PartB/MyAdvancedToken.sol). This contract has a fallback function to handle ETH being sent by MetaMask.
 
 14. Aside from the fallback function, this is the same contract that we explored in Lab2.
@@ -300,14 +300,28 @@ Hardhat.
 E10. In one very short paragraph, explain why we are not viewing Donna's token
 balance using MetaMask.
 
+## Part C. 2 Points. DeFiLlama.com is like a Bloomberg or Yahoo Finance for the decentralized finance (DeFi) world. It provides comprehensive data and analytics on various DeFi protocols across multiple blockchains, similar to how traditional financial websites offer insights into stocks, bonds, and other financial instruments. It categorizes protocols into different types, such as decentralized exchanges (DEXs), lending platforms, and yield aggregators, akin to how traditional sites categorize financial instruments into sectors or asset classes.
+
+24. Visit the DefLlama API at https://defillama.com/docs/api. Using Copilot and guided by your own interest in finance, develop a program (in JavaScript or Python) that uses the API to answer some interesting question. In your well labelled PDF, include the following three parts:
+
+E11. Provide the question that your program finds the answer to. Feel free to consult with Copilot when developing the question. It must be a question that can be answered by using the DeFiLlama API.
+
+E12. The program (in JavaScript or Python) that answers the question by making call(s) on the Defi Llama API. Feel free to use [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) to help create the code.
+
+E13. The output of the program when it executes. This program may or may not be interactive. 
+
 ## Grading rubric for Lab 3
+
 One pdf file named Lab3.pdf will be submitted on Canvas for grading.
 
 + 3 points for successful completion of Part A
-+ 1 point for correct submission and clear labelings of Part A
 + 5 points for successful completion of Part B
-+ 1 point for correct submission and clear labelings of Part B
++ 2 points for successful completion of Part C
+
+Penalty of the labelling on the PDF is not clear
+==========================
+ + -1/2 point
 
 Penalty for any late  work
 ==========================
-+ -1 point per day late
++ -1/2 points per day late
