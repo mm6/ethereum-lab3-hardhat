@@ -24,11 +24,13 @@ In Part B, we will work with an **ERC20 token contract**. ERC20 tokens are at th
 of many Decentralized Finance (DeFi) applications. We will interact with the contract using MetaMask. This ERC20 token contract has been slightly modified from Lab 2. It contains a
 fallback function that is called from MetaMask.
 
+In Part C, we will experiment with the DeFi Llama application programmer interface (API).
+
 **Deliverable:**
 
 Please compile your answers to questions E0 through E13 into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
 
-## Part A. 3 Points. Using MetaMask to interact with a Hardhat network running locally.
+## Part A. 3 Points. Using MetaMask to interact with a Hardhat network running locally. We are avoiding any use of the Ethereum Mainnet.
 
 1. In an empty directory named Lab3_MetaMask, begin by setting up an npm package. When prompted, hit return and select the defaults.
 ```
@@ -209,7 +211,7 @@ account and we are not importing her private key into MetaMask. We need only
 her public key to perform the transfer. Copy the transaction details as shown
 on the server's shell to your single, well-labeled pdf document.
 
-## Part B. 5 Points. Leave the server running and deploy an ERC20 token contract and interact with it via MetaMask.
+## Part B. 5 Points. Leave the server running and deploy an ERC-20 token contract and interact with it via MetaMask.
 
 Note: In this part, we are leaving the server from Part A. running.
 
@@ -302,13 +304,13 @@ balance using MetaMask.
 
 ## Part C. 2 Points. DeFiLlama.com is like a Bloomberg or Yahoo Finance for the decentralized finance (DeFi) world. It provides comprehensive data and analytics on various DeFi protocols across multiple blockchains, similar to how traditional financial websites offer insights into stocks, bonds, and other financial instruments. It categorizes protocols into different types, such as decentralized exchanges (DEXs), lending platforms, and yield aggregators, akin to how traditional sites categorize financial instruments into sectors or asset classes.
 
-24. Visit the DefLlama API at https://defillama.com/docs/api. Using Copilot and guided by your own interest in finance, develop a program (in JavaScript or Python) that uses the API to answer some interesting question. In your well labelled PDF, include the following three parts:
+24. Visit the [DefLlama API](https://defillama.com/docs/api. Using [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) and guided by your own interest in finance, develop a program (in JavaScript or Python) that uses the API to answer some interesting question. In your well labelled PDF, include the following three parts:
 
 E11. Provide the question that your program finds the answer to. Feel free to consult with Copilot when developing the question. It must be a question that can be answered by using the DeFiLlama API.
 
 E12. The program (in JavaScript or Python) that answers the question by making call(s) on the Defi Llama API. Feel free to use [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) to help create the code.
 
-E13. The output of the program when it executes. This program may or may not be interactive. 
+E13. The output of the program when it executes. This program may or may not be interactive.
 
 ## Grading rubric for Lab 3
 
