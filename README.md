@@ -1,9 +1,11 @@
-##  Fall 2024 Blockchain and SQL Fundamentals    Lab 3
+##  Spring 2025 Developing Blockchain Use Cases
 ### Carnegie Mellon University
-### Assigned: Thursday, November 21, 2024 5:00 PM
-### Due: Friday, December 13, 2024 11:59 PM
+### Due to Canvas: Wednesday, April 23, 2025
+### Assigned: Monday, April 7, 2025
 ### 10 Points
-### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
+### Deliverable: A single .pdf file named Lab2.pdf with clearly labelled answers.
+
+
 
 **Learning Objectives:**
 
@@ -306,7 +308,7 @@ balance using MetaMask.
 
 ## Part C. 2 Points. DeFiLlama.com is like a Bloomberg or Yahoo Finance for the decentralized finance (DeFi) world. It provides comprehensive data and analytics on various DeFi protocols across multiple blockchains, similar to how traditional financial websites offer insights into stocks, bonds, and other financial instruments. It categorizes protocols into different types, such as decentralized exchanges (DEXs), lending platforms, and yield aggregators, akin to how traditional sites categorize financial instruments into sectors or asset classes.
 
-24. Visit the [DefLlama API](https://defillama.com/docs/api). Using [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html) and guided by your own interest in finance, develop a program (in JavaScript or Python) that uses the API to answer some interesting question. In your well labelled PDF, include the following three parts:
+24. Visit the [DefLlama API](https://defillama.com/docs/api). Using [Copilot](https://www.cmu.edu/computing/services/ai/copilot/index.html), develop a program (in JavaScript or Python) that uses the API to answer some interesting question. In your well labelled PDF, include the following three parts:
 
 E12. Provide the question that your program finds the answer to. Feel free to consult with Copilot when developing the question. It must be a question that can be answered by using the DeFiLlama API.
 
