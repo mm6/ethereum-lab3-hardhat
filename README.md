@@ -5,13 +5,15 @@
 ### 10 Points
 ### Deliverable: A single .pdf file named Lab2.pdf with clearly labelled answers.
 
-
-
 **Learning Objectives:**
 
-In this Lab we are working with the MetaMask wallet, smart contracts, Hardhat, and Defi Llama.
+Our first major objective in this lab is to show how the MetaMask wallet can interact directly with the Ethereum blockchain. Note, we are using Hardhat as our blockchain emulator.
 
-This lab has 15 small exercises.
+Second, we will demonstrate how the MetaMask wallet can interact with an ERC-20 token contract deployed to Hardhat.
+
+Third, we will explore the application programmer interface (API) provided by DeFiLlama. DeFiLlama is a leading analytics platform for the decentralized finance (DeFi) ecosystem.
+
+**Notes on Part A:**
 
 A wallet like MetaMask has a limited user interface. If we need
 to generate arbitrary transactions to various smart contracts, we would do
@@ -24,15 +26,21 @@ In Part A, we will work **without a smart contract**. We will start the Hardhat
 network in its own shell and interact with the shell via the MetaMask wallet.
 Part A illustrates client server computing and a simple decentralized payment system.
 
+**Notes on Part B:**
+
 In Part B, we will work with an **ERC20 token contract**. ERC20 tokens are at the heart
 of many Decentralized Finance (DeFi) applications. We will interact with the contract using MetaMask. This ERC20 token contract has been slightly modified from Lab 2. It contains a
 fallback function that is called from MetaMask.
 
-In Part C, we will experiment with the DeFi Llama application programmer interface (API).
+**Notes on Part C:**
+
+In Part C, we will experiment with the DeFiLlama application programming interface (API). You are encouraged to use Copilot as a tool to help you develop an interesting query. Additionally, you will use Copilot to generate code to execute that query on the DeFiLlama API.
 
 **Deliverable:**
 
-Please compile your answers to questions E0 through E13 into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
+This lab has 15 small exercises.
+
+Please compile your answers to questions E0 through E14 into a single PDF file named ‘Lab3.pdf’. Ensure that the file is well-organized and properly labeled. Submit this single PDF file to Canvas.
 
 ## Part A. 3 Points. Using MetaMask to interact with a Hardhat network running locally. We are avoiding any use of the Ethereum Mainnet.
 
