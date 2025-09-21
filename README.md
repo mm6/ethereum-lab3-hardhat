@@ -1,7 +1,7 @@
 ##  Fall 2025 Blockchain and SQL Fundamentals
 ### Carnegie Mellon University
 ### Due to Canvas: Wednesday, October 1, 2025
-### Assigned: Monday, September 27, 2025
+### Assigned: Monday, September 22, 2025
 ### 10 Points
 ### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
 
