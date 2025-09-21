@@ -1,9 +1,9 @@
-##  Spring 2025 Developing Blockchain Use Cases
+##  Fall 2025 Blockchain and SQL Fundamentals
 ### Carnegie Mellon University
-### Due to Canvas: Wednesday, April 23, 2025
-### Assigned: Monday, April 7, 2025
+### Due to Canvas: Wednesday, October 1, 2025
+### Assigned: Monday, September 27, 2025
 ### 10 Points
-### Deliverable: A single .pdf file named Lab2.pdf with clearly labelled answers.
+### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
 
 **Learning Objectives:**
 
@@ -51,11 +51,12 @@ npm init
 2. We will use Hardhat for development.
 
 ```
-npm install --save-dev hardhat
+npm install --save-dev hardhat@^2.14.0
+
 ```
 3. Create an empty Hardhat configuration.
 ```
-npx hardhat init     
+npx hardhat     
 ```
 4. We will develop using the Hardhat plugins from the nomic foundation.
 ```
