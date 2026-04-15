@@ -1,7 +1,7 @@
 
 ##  Spring 2026 Developing Blockchain Use Cases
 ### Carnegie Mellon University
-### Due to Canvas: Monday, April 20, 2026
+### Due to Canvas: Friday, April 24, 2026
 ### Assigned: Monday, April 6, 2026
 ### 10 Points
 ### Deliverable: A single .pdf file named Lab3.pdf with clearly labelled answers.
